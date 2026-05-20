@@ -160,7 +160,7 @@ pipeline {
                 
                 echo "Build a image for auth-service"
                 
-                dir('check-service') {
+                dir('auth-service') {
                 sh """
                 docker build -t ${DOCKERHUB_USER}/${IMAGE1}:${BUILD_NUMBER} .
                 docker tag ${DOCKERHUB_USER}/${IMAGE1}:${BUILD_NUMBER} ${DOCKERHUB_USER}/${IMAGE1}:latest 
@@ -169,7 +169,7 @@ pipeline {
                 
                 echo "Build a image for eureka-service"
 
-                dir('push-service') {
+                dir('eureka-service') {
                 sh """
                 docker build -t ${DOCKERHUB_USER}/${IMAGE2}:${BUILD_NUMBER} .
                 docker tag ${DOCKERHUB_USER}/${IMAGE2}:${BUILD_NUMBER} ${DOCKERHUB_USER}/${IMAGE2}:latest 
