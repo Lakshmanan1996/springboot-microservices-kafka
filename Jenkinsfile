@@ -135,11 +135,7 @@ pipeline {
                     '''
                 )
 
-                sh "ls -l dependency-check-report || true"
-
-                dependencyCheckPublisher(
-                    pattern: '**/dependency-check-report.xml'
-                )
+                
             }
         }
 
